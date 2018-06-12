@@ -1,0 +1,9 @@
+loadi r3, #0
+loadi r1, #200
+loadi r0, #200
+loadi r2, #200
+add r0, r1, r2
+sub r2, r0, r2
+mul r0, r2, r0
+div r0, r2, r0
+mul r0, r3, r0
