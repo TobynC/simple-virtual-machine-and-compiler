@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -59,9 +60,28 @@ namespace CsVm
 
         private static void CompileLoadI(ref string[] values)
         {
+            if (values[1].ToCharArray().First() == '$' && CompileConstantHexadecimalValue(ref values[1]) > 255)
+            {
+                Console.WriteLine("Constant Too Large");
+                throw new Exception();
+            }
+
             var compiledCommand = LoadI.ToInt() << 12;
             compiledCommand = (CompileRegisterValue(ref values[0]) << 8) | compiledCommand;
-            compiledCommand += CompileConstantDecimalValue(ref values[1]);
+            var charId = values[1].ToCharArray().First();
+
+            switch (charId)
+            {
+                case '$':
+                    compiledCommand += CompileConstantHexadecimalValue(ref values[1]);
+                    break;
+                case '#':
+                    compiledCommand += CompileConstantDecimalValue(ref values[1]);
+                    break;
+                default:
+                    Console.WriteLine($"Invalid Identifier {charId}");
+                    throw new Exception();
+            }
 
             FileStream.Add(compiledCommand);
         }
@@ -97,6 +117,11 @@ namespace CsVm
         private static int CompileConstantDecimalValue(ref string value)
         {
             return int.Parse(value.Substring(1));
+        }
+
+        private static int CompileConstantHexadecimalValue(ref string value)
+        {
+            return int.Parse(value.Substring(1), NumberStyles.HexNumber);
         }
 
         public static int[] Compile()

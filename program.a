@@ -1,4 +1,4 @@
-loadi r3, #0
+loadi r3, $200
 loadi r1, #200
 loadi r0, #200
 loadi r2, #200
