@@ -18,7 +18,8 @@ namespace CsVm
             {LoadI, "loadi"},
             {Subtract, "sub"},
             {Multiply, "mul"},
-            {Divide, "div"}
+            {Divide, "div"},
+            {Load, "load"}
         };
 
         private static readonly Dictionary<string, int> RegisterLookup = new Dictionary<string, int>
@@ -48,6 +49,7 @@ namespace CsVm
             else if (command == CommandLookup[Subtract]) CompileThreeRegisterCommand(ref values, Subtract);
             else if (command == CommandLookup[Multiply]) CompileThreeRegisterCommand(ref values, Multiply);
             else if (command == CommandLookup[Divide]) CompileThreeRegisterCommand(ref values, Divide);
+            else if (command == CommandLookup[Load]) CompileLoad(ref values);
             else
             {
                 Console.WriteLine($"Invalid Syntax; {command} is not a valid command");
@@ -60,6 +62,15 @@ namespace CsVm
             var compiledCommand = LoadI.ToInt() << 12;
             compiledCommand = (CompileRegisterValue(ref values[0]) << 8) | compiledCommand;
             compiledCommand += CompileConstantDecimalValue(ref values[1]);
+
+            FileStream.Add(compiledCommand);
+        }
+
+        private static void CompileLoad(ref string[] values)
+        {
+            var compiledCommand = Load.ToInt() << 12;
+            compiledCommand = (CompileRegisterValue(ref values[0]) << 8) | compiledCommand;
+            compiledCommand = (CompileRegisterValue(ref values[1]) << 4) | compiledCommand;
 
             FileStream.Add(compiledCommand);
         }

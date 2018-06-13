@@ -6,14 +6,15 @@ namespace CsVm
 {
     public static class Utils
     {
-        public enum CommandCode:int
+        public enum CommandCode
         {
             Halt,
             LoadI,
             Add,
             Subtract,
             Multiply,
-            Divide
+            Divide,
+            Load
         }
 
         public static int ToInt(this CommandCode e)

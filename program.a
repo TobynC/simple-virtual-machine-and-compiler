@@ -7,3 +7,4 @@ sub r2, r0, r2
 mul r0, r2, r0
 div r0, r2, r0
 mul r0, r3, r0
+load r1, r0

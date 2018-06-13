@@ -58,6 +58,11 @@ namespace CsVm
                     Console.WriteLine($"loadi r{_register1} #{_immediateValue}");
                     _registers[_register1] = _immediateValue;
                     break;
+                case Load:
+                    //load
+                    Console.WriteLine($"load r{_register1} r{_register2}");
+                    _registers[_register2] = _registers[_register1];
+                    break;
                 case Add:
                     //add
                     Console.WriteLine($"add r{_register1} r{_register2} r{_register3}");
