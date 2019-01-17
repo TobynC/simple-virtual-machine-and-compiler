@@ -1,7 +1,7 @@
-loadi r3, $200
+loadi r3, #200
 loadi r1, #200
 loadi r0, #200
-loadi r2, #200
+loadi r2, $FF
 add r0, r1, r2
 sub r2, r0, r2
 mul r0, r2, r0

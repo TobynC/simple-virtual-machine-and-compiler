@@ -10,7 +10,7 @@ namespace CsVm
 {
     public static class Compiler
     {
-        private const string FileLocation = @"C:\Users\Tobyn\Documents\Visual Studio 2017\Projects\CsVm\CsVm\program.a";
+        private const string FileLocation = @"C:\Users\Tobyn\Documents\simple-virtual-machine-and-compiler\program.tasm";
         private static readonly List<int> FileStream = new List<int>();
 
         private static readonly Dictionary<Utils.CommandCode, string> CommandLookup = new Dictionary<Utils.CommandCode, string>
@@ -34,9 +34,8 @@ namespace CsVm
         private static void ReadFileAndCompile()
         {
             foreach (var line in File.ReadLines(FileLocation))
-            {
                 CompileLine(line);
-            }
+            
             FileStream.Add(0x0000);
         }
 
@@ -108,9 +107,8 @@ namespace CsVm
         private static int CompileRegisterValue(ref string value)
         {
             foreach (var i in RegisterLookup)
-            {
                 if (i.Key == value) return i.Value;
-            }
+            
             throw new Exception($"Register {value} not found.");
         }
 

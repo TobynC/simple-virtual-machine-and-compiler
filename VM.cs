@@ -74,13 +74,13 @@ namespace CsVm
                     _registers[_register3] = _registers[_register1] - _registers[_register2];
                     break;
                 case Multiply:
-                    //subtract
-                    Console.WriteLine($"subtract r{_register1} r{_register2} r{_register3}");
+                    //multiplication
+                    Console.WriteLine($"multiply r{_register1} r{_register2} r{_register3}");
                     _registers[_register3] = _registers[_register1] * _registers[_register2];
                     break;
                 case Divide:
-                    //subtract
-                    Console.WriteLine($"subtract r{_register1} r{_register2} r{_register3}");
+                    //division
+                    Console.WriteLine($"divide r{_register1} r{_register2} r{_register3}");
                     _registers[_register3] = _registers[_register1] / _registers[_register2];
                     break;
             }
@@ -89,10 +89,9 @@ namespace CsVm
         private void DisplayRegisters()
         {
             Console.Write("regs = ");
-            for (byte i = 0; i < NumberOfRegisters; i++)
-            {
+            for (byte i = 0; i < NumberOfRegisters; i++)            
                 Console.Write($"{_registers[i]:X4} ");
-            }
+            
             Console.Write(Environment.NewLine);
         }
 

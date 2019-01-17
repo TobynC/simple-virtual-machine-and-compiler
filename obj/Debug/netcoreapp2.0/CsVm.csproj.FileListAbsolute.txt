@@ -9,3 +9,14 @@ C:\Users\Tobyn\Documents\Visual Studio 2017\Projects\CsVm\CsVm\obj\Debug\netcore
 C:\Users\Tobyn\Documents\Visual Studio 2017\Projects\CsVm\CsVm\obj\Debug\netcoreapp2.0\CsVm.AssemblyInfo.cs
 C:\Users\Tobyn\Documents\Visual Studio 2017\Projects\CsVm\CsVm\obj\Debug\netcoreapp2.0\CsVm.dll
 C:\Users\Tobyn\Documents\Visual Studio 2017\Projects\CsVm\CsVm\obj\Debug\netcoreapp2.0\CsVm.pdb
+C:\Users\Tobyn\Documents\simple-virtual-machine-and-compiler\bin\Debug\netcoreapp2.0\CsVm.deps.json
+C:\Users\Tobyn\Documents\simple-virtual-machine-and-compiler\bin\Debug\netcoreapp2.0\CsVm.runtimeconfig.json
+C:\Users\Tobyn\Documents\simple-virtual-machine-and-compiler\bin\Debug\netcoreapp2.0\CsVm.runtimeconfig.dev.json
+C:\Users\Tobyn\Documents\simple-virtual-machine-and-compiler\bin\Debug\netcoreapp2.0\CsVm.dll
+C:\Users\Tobyn\Documents\simple-virtual-machine-and-compiler\bin\Debug\netcoreapp2.0\CsVm.pdb
+C:\Users\Tobyn\Documents\simple-virtual-machine-and-compiler\obj\Debug\netcoreapp2.0\CsVm.csprojAssemblyReference.cache
+C:\Users\Tobyn\Documents\simple-virtual-machine-and-compiler\obj\Debug\netcoreapp2.0\CsVm.csproj.CoreCompileInputs.cache
+C:\Users\Tobyn\Documents\simple-virtual-machine-and-compiler\obj\Debug\netcoreapp2.0\CsVm.AssemblyInfoInputs.cache
+C:\Users\Tobyn\Documents\simple-virtual-machine-and-compiler\obj\Debug\netcoreapp2.0\CsVm.AssemblyInfo.cs
+C:\Users\Tobyn\Documents\simple-virtual-machine-and-compiler\obj\Debug\netcoreapp2.0\CsVm.dll
+C:\Users\Tobyn\Documents\simple-virtual-machine-and-compiler\obj\Debug\netcoreapp2.0\CsVm.pdb
